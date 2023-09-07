@@ -36,7 +36,7 @@
     </div>
 
     <script>
-      const date = new Date();
+        
       const daysOfTheWeek = [
         "Sunday",
         "Monday",
@@ -46,17 +46,26 @@
         "Friday",
         "Saturday",
       ];
+      let currentDay = daysOfTheWeek[new Date().getDay()];
+      document.querySelector(`[data-testid="currentDayOfTheWeek"]`).innerText =
+        currentDay;
 
-      let currentDay = daysOfTheWeek[date.getDay()];
-      let currentUTCTime = `${date.getUTCHours()}h:${date.getUTCMinutes()}m ${date.getUTCSeconds()}s`;
+      // Set and Update current UTC time.
+      setInterval(function () {
+        let date = new Date();
+        let hours = date.getUTCHours();
+        let minutes = date.getUTCMinutes();
+        let seconds = date.getUTCSeconds();
 
-      document.querySelector(
-        `[data-testid="currentDayOfTheWeek"]`
-      ).textContent = currentDay;
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-      document.querySelector(`[data-testid="currentUTCTime"]`).textContent =
-        currentUTCTime;
+        let time = hours + ":" + minutes + ":" + seconds;
 
+        document.querySelector(`[data-testid="currentUTCTime"]`).innerText =
+          time;
+      }, 1000);
     </script>
   </body>
 </html>
