@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -6,6 +8,74 @@
     margin: 0;
 }
 
+html {
+    font-size: 18px;
+}
+
 body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    block-size: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.profile {
+    --bg-color: rgba(26, 29, 33);
+    --text-color: #d1d2d3;
+    --text-color-lighter: #fff;
+    --text-color-link: #36c5f0;
+    --text-color-highlight: #f2606a;
+    --border-radius: 6px;
+    max-inline-size: 350px;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+}
+
+.profile__img-wrapper {
+    block-size: 300px;
+    margin-block-end: 1rem;
+
+}
+
+.profile__img {
+    border-radius: var(--border-radius);
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+
+.profile__info {
+    margin-block-end: 1rem;
+}
+
+.profile__heading {
+    color: var(--text-color-lighter);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-block: 0.2em;
+}
+
+.profile__track {
+    color: var(--text-color-highlight);
+    letter-spacing: 0.03em;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.profile__date {
+    display: flex;
+    gap: 1rem;
+}
+
+.profile__link {
+    display: block;
+    margin-block: 0.875rem;
+    color: var(--text-color-link);
 }
