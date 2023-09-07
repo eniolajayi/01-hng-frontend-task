@@ -13,22 +13,30 @@
 
 
     <div class="container">
-      <figure>
-        <img
-          src="./slack_profile_picture.jpg"
-          alt="Heny"
-          data-testid="slackDisplayImage"
-        />
-      </figure>
-      <div>
-        <h1 class="heading" data-testid="slackUserName">Heny</h1>
-        <p class="" data-testid="myTrack">Frontend</p>
+      <div class="profile">
+        <figure class="profile__img-wrapper">
+          <img
+            class="profile__img"
+            src="./slack_profile_picture.jpg"
+            alt="Heny"
+            data-testid="slackDisplayImage"
+          />
+        </figure>
+        <div class="profile__info">
+          <h1 class="heading" data-testid="slackUserName">Heny</h1>
+          <p class="" data-testid="myTrack">Frontend</p>
+        </div>
+        <div class="profile__date">
+          <p data-testid="currentDayOfTheWeek"></p>
+          <p data-testid="currentUTCTime"></p>
+        </div>
+        <a
+          class="profile__link"
+          href="https://github.com/eniolajayi/01-hng-frontend-task"
+          data-testid="githubURL"
+          >GitHub repository</a
+        >
       </div>
-      <div class="time">
-        <p class="time_day" data-testid="currentDayOfTheWeek"></p>
-        <p class="time_utc" data-testid="currentUTCTime"></p>
-      </div>
-      <a class="link" href="" data-testid="githubURL"></a>
     </div>
 
     <script>
