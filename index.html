@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HNG Task 1 - Frontend Track | eniolajayi</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <!-- 
+        Task title: 
+        Frontend Page Creation with Specific Elements
+
+        Task objective: 
+        Develop and host a web page using HTML and CSS 
+        that showcases specific personal and real-time data attributes. 
+        Each required element should have a specified data-testid attribute 
+        for easy identification and testing.
+
+     -->
+
+    <div class="container">
+      <figure>
+        <img
+          src="./slack_profile_picture.jpg"
+          alt="Heny"
+          data-testid="slackDisplayImage"
+        />
+      </figure>
+      <div>
+        <h1 class="heading" data-testid="slackUserName">Heny</h1>
+        <p class="" data-testid="myTrack">Frontend</p>
+      </div>
+      <div class="time">
+        <p class="time_day" data-testid="currentDayOfTheWeek"></p>
+        <p class="time_utc" data-testid="currentUTCTime"></p>
+      </div>
+      <a class="link" href="" data-testid="githubURL"></a>
+    </div>
+
+    <script>
+      const date = new Date();
+      const daysOfTheWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+      let currentDay = daysOfTheWeek[date.getDay()];
+      let currentUTCTime = `${date.getUTCHours()}h:${date.getUTCMinutes()}m ${date.getUTCSeconds()}s`;
+
+      document.querySelector(
+        `[data-testid="currentDayOfTheWeek"]`
+      ).textContent = currentDay;
+
+      document.querySelector(`[data-testid="currentUTCTime"]`).textContent =
+        currentUTCTime;
+
+    </script>
+  </body>
+</html>
