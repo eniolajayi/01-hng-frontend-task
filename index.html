@@ -48,7 +48,7 @@
 
       setInterval(function () {
         // Set current day
-        let currentDay = daysOfTheWeek[new Date().getDay()];
+        let currentDay = daysOfTheWeek[new Date().getUTCDay()];
         document.querySelector(
           `[data-testid="currentDayOfTheWeek"]`
         ).textContent = currentDay;
