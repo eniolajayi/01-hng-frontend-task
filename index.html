@@ -51,11 +51,11 @@
         let currentDay = daysOfTheWeek[new Date().getDay()];
         document.querySelector(
           `[data-testid="currentDayOfTheWeek"]`
-        ).innerText = currentDay;
+        ).textContent = currentDay;
 
         // Set and Update current UTC time.
-        document.querySelector(`[data-testid="currentUTCTime"]`).innerText =
-          Date.now();
+        document.querySelector(`[data-testid="currentUTCTime"]`).textContent =
+         new Date().getTime();
       }, 1000);
     </script>
   </body>
